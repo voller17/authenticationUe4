@@ -1,0 +1,6 @@
+{
+	"OutputFiles": [
+		"Module.VaRestPlugin.cpp.o",
+		"Module.VaRestPlugin.gen.cpp.o"
+	]
+}
