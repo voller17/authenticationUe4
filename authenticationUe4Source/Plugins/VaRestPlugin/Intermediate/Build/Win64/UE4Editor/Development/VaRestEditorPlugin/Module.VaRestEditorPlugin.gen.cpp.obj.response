@@ -23,7 +23,7 @@
 /wd4838
 /we4668
 /I .
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Private
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Private
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -412,15 +412,15 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\CurveEditor
 /I Editor\CurveEditor\Public
 /I Editor\CurveEditor
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestEditorPlugin
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Classes
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Public
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestPlugin
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Classes
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Public
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestEditorPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Classes
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin\Public
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestEditorPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Classes
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Public
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin
 /I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.13.26128\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
@@ -430,9 +430,9 @@
 /FI"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.h"
 /Yu"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.h"
 /Fp"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.h.pch"
-"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Module.VaRestEditorPlugin.gen.cpp"
-/FI"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Definitions.VaRestEditorPlugin.h"
-/Fo"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Module.VaRestEditorPlugin.gen.cpp.obj"
+"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Module.VaRestEditorPlugin.gen.cpp"
+/FI"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Definitions.VaRestEditorPlugin.h"
+/Fo"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestEditorPlugin\Module.VaRestEditorPlugin.gen.cpp.obj"
 /TP
 /GR-
 /W4

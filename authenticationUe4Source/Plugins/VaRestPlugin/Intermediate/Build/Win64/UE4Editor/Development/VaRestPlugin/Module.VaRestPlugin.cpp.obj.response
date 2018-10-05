@@ -24,12 +24,12 @@
 /wd4838
 /we4668
 /I .
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Private
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestPlugin
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Classes
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Public
-/I D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Private
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Inc\VaRestPlugin
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Classes
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin\Public
+/I D:\authenticationUe4\Plugins\VaRestPlugin\Source\VaRestPlugin
 /I Runtime
 /I Runtime\Core\Public
 /I Runtime\Core
@@ -416,9 +416,9 @@
 /FI"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Yu"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Fp"D:\SrcUE420\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.pch"
-"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Module.VaRestPlugin.cpp"
-/FI"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Definitions.VaRestPlugin.h"
-/Fo"D:\authenticationUe4\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Module.VaRestPlugin.cpp.obj"
+"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Module.VaRestPlugin.cpp"
+/FI"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Definitions.VaRestPlugin.h"
+/Fo"D:\authenticationUe4\Plugins\VaRestPlugin\Intermediate\Build\Win64\UE4Editor\Development\VaRestPlugin\Module.VaRestPlugin.cpp.obj"
 /TP
 /GR-
 /W4
