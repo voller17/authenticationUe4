@@ -49,7 +49,7 @@ class VARESTPLUGIN_API UVaRestJsonObject : public UObject
 
 	//////////////////////////////////////////////////////////////////////////
 	// FJsonObject API
-
+public:
 	/** Returns a list of field names that exist in the object */
 	UFUNCTION(BlueprintPure, Category = "VaRest|Json")
 	TArray<FString> GetFieldNames() const;

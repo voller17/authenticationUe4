@@ -29,6 +29,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+
+//My Variables ------------------------------------------------------------------------------------------------------------>
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		FString UserName;
+
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -68,5 +73,9 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	//My FUNCTION ------------------------------------------------------------------------------------------------------------>
+	UFUNCTION()
+		void SetUserName(FString Name);
 };
 

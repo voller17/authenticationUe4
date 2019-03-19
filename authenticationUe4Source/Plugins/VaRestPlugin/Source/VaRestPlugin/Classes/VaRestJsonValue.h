@@ -67,7 +67,7 @@ class VARESTPLUGIN_API UVaRestJsonValue : public UObject
 
 	//////////////////////////////////////////////////////////////////////////
 	// FJsonValue API
-
+public:
 	/** Get type of Json value (Enum) */
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Json")
 	EVaJson::Type GetType() const;

@@ -15,6 +15,9 @@
 #include "UnrealString.h"
 #include "CPlayerController_Game.generated.h"
 
+class UVaRestJsonValue;
+class AauthenticationUe4Character;
+
 
 /**
  * 
@@ -35,9 +38,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 
-	// https://wiki.unrealengine.com/Replication 
-	//https://wiki.unrealengine.com/Networking/Replication
-	//GetUserSessionKey Client
+												// https://wiki.unrealengine.com/Replication 
+												//https://wiki.unrealengine.com/Networking/Replication
+												//GetUserSessionKey Client
 public:
 UFUNCTION(reliable, client)
 	void ServerToGetUserSessionKey();//обьявление самой функции
@@ -45,7 +48,7 @@ UFUNCTION(reliable, client)
 
 public:
 UFUNCTION(Server, Reliable, WithValidation)
-//https://forums.unrealengine.com/development-discussion/c-gameplay-programming/1389108-fstring-and-rpc-compile-error
+												//https://forums.unrealengine.com/development-discussion/c-gameplay-programming/1389108-fstring-and-rpc-compile-error
 	void SetUserSessionKeyServer(const FString& LUserSessionKey);
 	virtual bool SetUserSessionKeyServer_Validate(const FString& LUserSessionKey);
 	virtual void SetUserSessionKeyServer_Implementation(const FString& LUserSessionKey);
@@ -61,12 +64,24 @@ virtual bool GetUserName_Validate();
 UFUNCTION()
 	void StartInit();
 
+UFUNCTION()
+	UVaRestJsonObject* ApllyUrl(FString UrlField);
+
 					//Variables******
 UPROPERTY()
 	UCGameInstance_Login* SGI;
 		
 UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ReplicatedVariables|UserData")
 	bool EndInit;
+
+UPROPERTY()
+	UVaRestJsonValue* RqValue;
+
+UPROPERTY()
+	UVaRestJsonObject* RqResult;
+public:
+UPROPERTY()
+	AauthenticationUe4Character* Ue4Character;
 
 UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
 	FString UserSessionKey;

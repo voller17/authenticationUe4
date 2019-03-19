@@ -76,6 +76,11 @@ void AauthenticationUe4Character::SetupPlayerInputComponent(class UInputComponen
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AauthenticationUe4Character::OnResetVR);
 }
 
+void AauthenticationUe4Character::SetUserName(FString Name)
+{
+	UserName = Name;
+}
+
 
 void AauthenticationUe4Character::OnResetVR()
 {

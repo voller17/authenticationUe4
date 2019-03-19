@@ -2,6 +2,9 @@
 
 #include "CPlayerController_Game.h"
 #include "UnrealNetwork.h"
+#include "authenticationUe4Character.h"
+#include "VaRestJsonValue.h"
+
 
 
 
@@ -20,7 +23,7 @@ ACPlayerController_Game::ACPlayerController_Game()
 void ACPlayerController_Game::BeginPlay()
 {
 	Super::BeginPlay();
-	UCGameInstance_Login* SGI = Cast<UCGameInstance_Login>(GetGameInstance());
+	UCGameInstance_Login* SGI = Cast<UCGameInstance_Login>(GetGameInstance());	
 		//set timer 0.5sec
 	//https: //www.tomlooman.com/using-timers-in-ue4/
 	//https: //docs.unrealengine.com/en-us/Programming/UnrealArchitecture/Timers
@@ -59,6 +62,15 @@ void ACPlayerController_Game::Tick(float DeltaTime)
 	}
 }
 
+ UVaRestJsonObject* ACPlayerController_Game::ApllyUrl(FString UrlField)
+ {
+	 UVaRestRequestJSON Rq;
+	 Rq.ConstructRequestExt(this, ERequestVerb(0), ERequestContentType(0));
+	 RqResult = Rq.GetResponseObject();	 
+	 FLatentActionInfo ActionInfo;
+	 return RqResult;
+ }
+
  //									ServerToGetUserSessionKey
 
 
@@ -96,14 +108,11 @@ bool ACPlayerController_Game::SetUserSessionKeyServer_Validate(const FString& LU
 
 void ACPlayerController_Game::GetUserName_Implementation()
 {
-	UVaRestRequestJSON req;
-	req.SetVerb(ERequestVerb(0));
-	req.SetContentType(ERequestContentType(0));
-	UVaRestJsonObject* reqresult;
-	FString resultstring = "";
-	FLatentActionInfo ActionInfo;
-	req.ApplyURL(resultstring, reqresult, this, ActionInfo);
-	//req.get
+	UVaRestJsonObject* RqResult = ApllyUrl(ServerURL+"g_userinfo.php?apireqkey="+APIKey+"&func="+"getinfo_username&req="+UserSessionKey);
+	if(RqValue)	RqValue = RqResult->GetField("username");
+	else return;// тут надо выводить лог что , что то пошло не так))
+	AauthenticationUe4Character* Ue4Character = Cast<AauthenticationUe4Character>(GetPawn());
+	Ue4Character->SetUserName(RqValue->AsString());
 }
 
 bool ACPlayerController_Game::GetUserName_Validate()
