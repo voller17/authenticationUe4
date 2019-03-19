@@ -2,11 +2,19 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
 #include "Core.h"
 #include "GameFramework/PlayerController.h"
 #include "CGameInstance_Login.h"
+#include "VaRestRequestJSON.h"
+#include "VaRestJsonObject.h"
+#include "VaRestLibrary.h"
+#include "VaRestSettings.h"
+#include "Private/VaRestPluginPrivatePCH.h"
+#include "UnrealString.h"
 #include "CPlayerController_Game.generated.h"
+
 
 /**
  * 
@@ -46,8 +54,8 @@ UFUNCTION(Server, Reliable, WithValidation)
 public:
 UFUNCTION(Server, Reliable, WithValidation)
 	void GetUserName();
-	virtual void GetUserName_Implementation();
-	virtual bool GetUserName_Validate();
+virtual void GetUserName_Implementation();//имплементация функции на клиенте
+virtual bool GetUserName_Validate();
 
 
 UFUNCTION()

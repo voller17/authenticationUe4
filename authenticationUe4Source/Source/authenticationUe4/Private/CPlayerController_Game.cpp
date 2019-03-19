@@ -1,7 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "UnrealNetwork.h"
 #include "CPlayerController_Game.h"
+#include "UnrealNetwork.h"
+
+
 
 
 
@@ -74,8 +76,12 @@ void ACPlayerController_Game::ServerToGetUserSessionKey_Implementation()//имплем
 
 void ACPlayerController_Game::SetUserSessionKeyServer_Implementation(const FString& LUserSessionKey)//имплементация функции на клиенте
 {
-	UserSessionKey = LUserSessionKey;
-	GetUserName();	
+	
+	if (LUserSessionKey.Len() > 0)
+	{
+		UserSessionKey = LUserSessionKey;
+		GetUserName();
+	}
 }
 
 
@@ -88,9 +94,16 @@ bool ACPlayerController_Game::SetUserSessionKeyServer_Validate(const FString& LU
 
 
 
-void ACPlayerController_Game::GetUserName_Implementation()//имплементация функции на клиенте
+void ACPlayerController_Game::GetUserName_Implementation()
 {
-	
+	UVaRestRequestJSON req;
+	req.SetVerb(ERequestVerb(0));
+	req.SetContentType(ERequestContentType(0));
+	UVaRestJsonObject* reqresult;
+	FString resultstring = "";
+	FLatentActionInfo ActionInfo;
+	req.ApplyURL(resultstring, reqresult, this, ActionInfo);
+	//req.get
 }
 
 bool ACPlayerController_Game::GetUserName_Validate()
