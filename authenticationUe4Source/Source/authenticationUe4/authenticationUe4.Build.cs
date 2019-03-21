@@ -8,6 +8,6 @@ public class authenticationUe4 : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","VaRestPlugin" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "Json", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","VaRestPlugin" });
 	}
 }

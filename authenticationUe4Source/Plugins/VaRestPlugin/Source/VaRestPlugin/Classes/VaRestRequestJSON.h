@@ -190,7 +190,7 @@ public:
 	//////////////////////////////////////////////////////////////////////////
 	// URL processing
 
-public:
+//public:
 	/** Setting request URL */
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Request")
 	void SetURL(const FString& Url = TEXT("http://alyamkin.com"));

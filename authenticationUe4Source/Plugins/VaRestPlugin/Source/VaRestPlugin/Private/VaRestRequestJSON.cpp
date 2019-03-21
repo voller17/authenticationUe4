@@ -264,6 +264,7 @@ void UVaRestRequestJSON::ApplyURL(const FString& Url, UVaRestJsonObject *&Result
 	}
 
 	ProcessRequest();
+	UE_LOG(LogVaRest, Error, TEXT("UVaRestRequestJSON::ApplyURL End!"));
 }
 
 void UVaRestRequestJSON::ExecuteProcessRequest()

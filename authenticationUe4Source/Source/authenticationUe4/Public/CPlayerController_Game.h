@@ -17,6 +17,8 @@
 
 class UVaRestJsonValue;
 class AauthenticationUe4Character;
+class UVaRestRequestJSON;
+class UVaRestJsonObject;
 
 
 /**
@@ -64,12 +66,12 @@ virtual bool GetUserName_Validate();
 UFUNCTION()
 	void StartInit();
 
-UFUNCTION()
-	UVaRestJsonObject* ApllyUrl(FString UrlField);
 
 					//Variables******
 UPROPERTY()
 	UCGameInstance_Login* SGI;
+UPROPERTY()
+	UVaRestJsonObject* RqResult;
 		
 UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ReplicatedVariables|UserData")
 	bool EndInit;
@@ -77,8 +79,6 @@ UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ReplicatedVariables|
 UPROPERTY()
 	UVaRestJsonValue* RqValue;
 
-UPROPERTY()
-	UVaRestJsonObject* RqResult;
 public:
 UPROPERTY()
 	AauthenticationUe4Character* Ue4Character;
