@@ -6,6 +6,7 @@
 #include "VaRestJsonValue.h"
 #include "VaRestRequestJSON.h"
 #include "VaRestJsonObject.h"
+#include "GameStructs.h"
 #include "Json.h"
 
 
@@ -133,6 +134,14 @@ void ACPlayerController_Game::GetUserDataFromServer_Implementation()//имплемента
 			AauthenticationUe4Character* Ue4Character = Cast<AauthenticationUe4Character>(GetPawn());
 			Ue4Character->SetUserName(RqResult->GetField("username")->AsString());
 			ClientMessage("Character name: "+RqResult->GetField("username")->AsString());
+			ClientMessage("characteristics" + RqResult->GetField("characteristics")->AsString());			
+			
+	
+			UGameStructs y;
+			y.StringToStruct(RqResult->GetField("characteristics")->AsString());
+			//UGameStructs.StringToStruct(APIKey);
+
+			//StringToStruct(APIKey);
 		}
 		else
 		{
@@ -152,4 +161,3 @@ void ACPlayerController_Game::GetUserDataFromServer_Implementation()//имплемента
 		}
 	}
 }
-

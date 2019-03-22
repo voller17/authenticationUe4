@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "UnrealNetwork.h"
+#include "GameStructs.h"
 #include "authenticationUe4Character.generated.h"
 
 UCLASS(config=Game)
