@@ -51,23 +51,23 @@ UFUNCTION(reliable, client)
 public:
 UFUNCTION(Server, Reliable, WithValidation)
 												//https://forums.unrealengine.com/development-discussion/c-gameplay-programming/1389108-fstring-and-rpc-compile-error
-	void SetUserSessionKeyServer(const FString& LUserSessionKey);
-	virtual bool SetUserSessionKeyServer_Validate(const FString& LUserSessionKey);
-	virtual void SetUserSessionKeyServer_Implementation(const FString& LUserSessionKey);
+	void SetUserSessionKeyOnServer(const FString& LUserSessionKey);
+	virtual bool SetUserSessionKeyOnServer_Validate(const FString& LUserSessionKey);
+	virtual void SetUserSessionKeyOnServer_Implementation(const FString& LUserSessionKey);
 
 
 public:
 UFUNCTION(Server, Reliable, WithValidation)
-	void GetUserName();
-virtual void GetUserName_Implementation();//имплементация функции на клиенте
-virtual bool GetUserName_Validate();
+	void GetUserDataFromServer();
+virtual void GetUserDataFromServer_Implementation();//имплементация функции на клиенте
+virtual bool GetUserDataFromServer_Validate();
 
 
 UFUNCTION()
 	void StartInit();
 
 UFUNCTION()
-	void ApplyURLCallBack();
+	void PrintRole();//printRole (Authority)
 
 					//Variables******
 UPROPERTY()
@@ -89,10 +89,10 @@ UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
 	FString UserSessionKey;
 
 UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
-	FString APIKey;
+	FString APIKey = "CD15BC97E2292F3C6AFECC921B5A6A9DFE010793664181D74E9597DC1140057C4C70DEDA246D1A41201F93BA764870B24C202A1AFA38711D8421C7019DC954C2";
 
 UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
-	FString ServerURL;
+	FString ServerURL= "http://localhost/api/";
 
 UPROPERTY()
 	FTimerHandle BeginPlayTimerHandle;

@@ -30,7 +30,7 @@ void UCGameInstance_Login::SetServerURL(FString lServerURL)
 
 FString UCGameInstance_Login::GetUserSessionKey()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.5f, FColor::Yellow, FString::Printf(TEXT("11111")));
+	//GEngine->AddOnScreenDebugMessage(-1, 2.5f, FColor::Yellow, FString::Printf(TEXT("11111")));
 	return UserSessionKey;
 }
 

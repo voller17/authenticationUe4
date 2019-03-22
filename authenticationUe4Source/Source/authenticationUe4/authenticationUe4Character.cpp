@@ -5,6 +5,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
+#include "UnrealNetwork.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -16,6 +17,9 @@ AauthenticationUe4Character::AauthenticationUe4Character()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+	bReplicates = true;
+	//In the actorТs constructor, make sure you have the bReplicates flag set to true: https://www.unrealengine.com/en-US/blog/network-tips-and-tricks
+	
 
 	// set our turn rates for input
 	BaseTurnRate = 45.f;
@@ -136,4 +140,12 @@ void AauthenticationUe4Character::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+	
 }
+//--------------------------------------------------//имплементаци€ функции что бы репрецировалась переменна€(переменные)
+void AauthenticationUe4Character::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AauthenticationUe4Character, UserName);
+}
+

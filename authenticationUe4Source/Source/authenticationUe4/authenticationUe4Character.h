@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "UnrealNetwork.h"
 #include "authenticationUe4Character.generated.h"
 
 UCLASS(config=Game)
@@ -31,8 +32,9 @@ public:
 
 
 //My Variables ------------------------------------------------------------------------------------------------------------>
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-		FString UserName;
+	public:
+	UPROPERTY(EditDefaultsOnly, Replicated, BlueprintReadWrite)
+		FString UserName;	
 
 protected:
 

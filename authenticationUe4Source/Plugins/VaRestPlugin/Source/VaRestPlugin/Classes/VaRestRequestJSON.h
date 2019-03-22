@@ -5,7 +5,6 @@
 #include "Engine/LatentActionManager.h"
 #include "LatentActions.h"
 #include "Http.h"
-
 #include "VaRestTypes.h"
 #include "VaRestRequestJSON.generated.h"
 
