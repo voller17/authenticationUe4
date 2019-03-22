@@ -52,9 +52,8 @@ void ACPlayerController_Game::BeginPlay()
 	/*AauthenticationUe4Character* Ue4Character = Cast<AauthenticationUe4Character>(GetPawn());
 	Ue4Character->SetUserName(RqValue->AsString());*/
 
-	
-
 	UCGameInstance_Login* SGI = Cast<UCGameInstance_Login>(GetGameInstance());	
+
 	UVaRestRequestJSON *Rq = UVaRestRequestJSON::ConstructRequest(this);
 	Rq->SetVerb(ERequestVerb(0));
 	Rq->SetContentType(ERequestContentType(0));
@@ -62,13 +61,41 @@ void ACPlayerController_Game::BeginPlay()
 	Rq->SetRequestObject(RqResult);
 	RqResult = Rq->GetResponseObject();
 	FLatentActionInfo ActionInfo;
+	ActionInfo.CallbackTarget = this;
+	ActionInfo.ExecutionFunction = "ApplyURLCallBack";	
+	ActionInfo.Linkage = 0;
+	ActionInfo.UUID = 123;
 	Rq->ApplyURL("http://localhost/api/g_userinfo.php?apireqkey=CD15BC97E2292F3C6AFECC921B5A6A9DFE010793664181D74E9597DC1140057C4C70DEDA246D1A41201F93BA764870B24C202A1AFA38711D8421C7019DC954C2&func=getinfo_username&req=df38558de3dea99ce98954473e7e049d4796bf4ba164e87fb57ea3e73d5a62f6337f09c05f901183f183542c46ebd692567286b418f6f0d530373dd8cb94fad1", RqResult, this, ActionInfo);
 		//set timer 0.5sec
 	//https: //www.tomlooman.com/using-timers-in-ue4/
 	//https: //docs.unrealengine.com/en-us/Programming/UnrealArchitecture/Timers
 	GetWorldTimerManager().SetTimer(BeginPlayTimerHandle, this, &ACPlayerController_Game::StartInit, 0.5f, false);
-	
+
 }
+
+void ACPlayerController_Game::ApplyURLCallBack()
+{
+	if (RqResult)
+	{
+		ClientMessage(FString::FromInt(RqResult->GetFieldNames().Num()));
+		//ClientMessage(RqResult->GetField("characteristics")->AsString());
+		FString* StrPtr = RqResult->GetFieldNames().GetData();
+		for (int i = 0; i < RqResult->GetFieldNames().Num(); i++)
+		{
+			ClientMessage(*RqResult->GetFieldNames().GetData()[i]);
+			ClientMessage(RqResult->GetField(*RqResult->GetFieldNames().GetData()[i])->AsString());
+			//RqResult->GetFieldNames().Last(0)
+			//RqResult->GetFieldNames().Max()
+			
+
+		}
+
+	}
+	else
+		ClientMessage("novalid get field");
+}
+
+
 //						Tick
 
 
@@ -83,7 +110,7 @@ void ACPlayerController_Game::Tick(float DeltaTime)
 
  void ACPlayerController_Game::StartInit()
 {
-	 GetWorldTimerManager().ClearTimer(BeginPlayTimerHandle);
+	/* GetWorldTimerManager().ClearTimer(BeginPlayTimerHandle);
 
 	 if (RqResult)
 	 {
@@ -96,7 +123,7 @@ void ACPlayerController_Game::Tick(float DeltaTime)
 		
 	 }
 	 	 else
-	 ClientMessage("novalid get field");
+	 ClientMessage("novalid get field");*/
 	 //Rq.ConstructRequestExt(this, ERequestVerb(0), ERequestContentType(0));
 
 	 //print string 0.5sec
@@ -115,6 +142,8 @@ void ACPlayerController_Game::Tick(float DeltaTime)
 		SetInputMode(FInputModeGameOnly());
 	}
 }
+
+
 
 
  //									ServerToGetUserSessionKey

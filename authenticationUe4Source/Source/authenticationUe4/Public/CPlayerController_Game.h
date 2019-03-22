@@ -66,6 +66,8 @@ virtual bool GetUserName_Validate();
 UFUNCTION()
 	void StartInit();
 
+UFUNCTION()
+	void ApplyURLCallBack();
 
 					//Variables******
 UPROPERTY()
