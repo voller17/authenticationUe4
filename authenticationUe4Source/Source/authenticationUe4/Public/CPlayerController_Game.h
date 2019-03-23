@@ -13,7 +13,7 @@
 #include "VaRestSettings.h"
 #include "Private/VaRestPluginPrivatePCH.h"
 #include "UnrealString.h"
-#include "GameStructs.h"
+#include "GameLibrary.h"
 #include "CPlayerController_Game.generated.h"
 
 class UVaRestJsonValue;
