@@ -136,7 +136,7 @@ void ACPlayerController_Game::GetUserDataFromServer_Implementation()//имплемента
 			ClientMessage("Character name: "+RqResult->GetField("username")->AsString());
 			ClientMessage("characteristics" + RqResult->GetField("characteristics")->AsString());			
 			
-			UGameLibrary::StringToStruct("test");
+			UGameLibrary::StringToStruct(RqResult->GetField("characteristics")->AsString());
 			//UGameLibrary y;
 			//StringToStruct("characteristics");
 			//y.StringToStruct(RqResult->GetField("characteristics")->AsString());

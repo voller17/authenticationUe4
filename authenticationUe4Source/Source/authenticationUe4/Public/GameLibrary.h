@@ -4,6 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "Kismet/KismetStringLibrary.h"
+#include "Kismet/KismetArrayLibrary.h"
+#include "Engine/World.h"
 #include "GameLibrary.generated.h"
 
 /**
