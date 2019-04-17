@@ -62,7 +62,7 @@ FCharacterData UGameLibrary::StringToStruct(FString data)
 		localCharacterData.Karma = FieldsData[12];
 		UE_LOG(LogTemp, Display, TEXT("String Convernt to FCharacterData Success"));
 		//MaxHealth110.0Health110.0RecoveryHealth2.0MaxStamina227.399902Stamina227.399902RecoveryStamina4.0MaxManna403.0Manna403.0RecoveryManna8.0PhysicalResist51.0MagicResist11.0AffectionResist1.1Karma0.5
-		return localCharacterData;
+		return localCharacterData;		
 	}
 }
 
