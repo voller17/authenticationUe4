@@ -86,6 +86,28 @@ void AauthenticationUe4Character::SetUserName(FString Name)
 }
 
 
+bool AauthenticationUe4Character::ClientCharaterStartInit_Validate()//проверка на валидность функции чисто для репликации
+{
+
+	// Optionally validate the request and return false if the function should not be run.
+	return true;
+}
+void AauthenticationUe4Character::ClientCharaterStartInit_Implementation()//имплементация функции на Сервере получаем данные с сервера через UserSessionKey и сохраняем их
+{
+	ClientCharaterEndInit();
+}
+
+bool AauthenticationUe4Character::ClientCharaterEndInit_Validate()//проверка на валидность функции чисто для репликации
+{
+
+	// Optionally validate the request and return false if the function should not be run.
+	return true;
+}
+void AauthenticationUe4Character::ClientCharaterEndInit_Implementation()//имплементация функции на Сервере получаем данные с сервера через UserSessionKey и сохраняем их
+{
+
+}
+
 void AauthenticationUe4Character::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();

@@ -36,7 +36,8 @@ public:
 	public:
 	UPROPERTY(EditDefaultsOnly, Replicated, BlueprintReadWrite)
 		FString UserName;	
-
+	UPROPERTY(Replicated)
+		bool bControllerEndInit;
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -80,5 +81,14 @@ public:
 	//My FUNCTION ------------------------------------------------------------------------------------------------------------>
 	UFUNCTION()
 		void SetUserName(FString Name);
+	UFUNCTION(reliable, client, WithValidation)
+		void ClientCharaterStartInit();
+	virtual void ClientCharaterStartInit_Implementation();//имплементация функции на клиенте
+	virtual bool ClientCharaterStartInit_Validate();
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintCosmetic)//BlueprintCosmetic вызывается только на клиенте
+		void ClientCharaterEndInit();
+	virtual void ClientCharaterEndInit_Implementation();//имплементация функции на клиенте
+	virtual bool ClientCharaterEndInit_Validate();
 };
 

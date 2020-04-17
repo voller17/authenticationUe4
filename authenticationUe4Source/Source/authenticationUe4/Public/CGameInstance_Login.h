@@ -37,13 +37,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SetServerURL(FString lServerURL);
 public:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 		FString GetUserSessionKey();
 public:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 		FString GetAPIKey();
 public:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 		FString GetServerURL();
 	
 	

@@ -64,9 +64,25 @@ public:
 	virtual bool GetUserDataFromServer_Validate();
 
 
+
+
 	UFUNCTION()
 		void StartInit();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)//BlueprintCosmetic вызывается только на клиенте
+		void HideLoadScreen();//	HideLoadScreen скрыть экран загрузки после окончания инициализации контроллера
+
+	UFUNCTION(reliable, client, WithValidation)
+		void ClientControllerEndInit();
+	virtual void ClientControllerEndInit_Implementation();//имплементация функции на клиенте
+	virtual bool ClientControllerEndInit_Validate();
+
+	UFUNCTION(reliable, Server, WithValidation)
+		void ServerControllerEndInit();
+	virtual void ServerControllerEndInit_Implementation();//имплементация функции на клиенте
+	virtual bool ServerControllerEndInit_Validate();
+
+	
 	UFUNCTION()
 		void PrintRole();//printRole (Authority)
 
@@ -77,7 +93,7 @@ public:
 		UVaRestJsonObject* RqResult;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ReplicatedVariables|UserData")
-		bool EndInit;
+		bool bEndInit;
 
 	UPROPERTY()
 		UVaRestJsonValue* RqValue;
@@ -86,14 +102,14 @@ public:
 	UPROPERTY()
 		AauthenticationUe4Character* Ue4Character;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, replicated, Category = "ServerVariables")
 		FString UserSessionKey;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
 		FString APIKey = "CD15BC97E2292F3C6AFECC921B5A6A9DFE010793664181D74E9597DC1140057C4C70DEDA246D1A41201F93BA764870B24C202A1AFA38711D8421C7019DC954C2";
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "ServerVariables")
-		FString ServerURL = "http://localhost/api/";
+		FString ServerURL = "http://192.168.100.26/api/";
 
 	UPROPERTY()
 		FTimerHandle BeginPlayTimerHandle;
