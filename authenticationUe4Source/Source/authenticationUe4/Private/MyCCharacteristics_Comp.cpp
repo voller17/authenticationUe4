@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "MyCCharacteristics_Comp.h"
 #include "UnrealNetwork.h"
 #include "CPlayerController_Game.h"
 #include "TimerManager.h"
 #include "Engine/World.h"
 #include "GameFramework/Actor.h"
-#include "MyCCharacteristics_Comp.h"
 
 
 // Sets default values for this component's properties
