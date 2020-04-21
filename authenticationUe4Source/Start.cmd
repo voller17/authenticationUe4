@@ -1,0 +1,1 @@
+start authenticationUe4Server.exe -log
