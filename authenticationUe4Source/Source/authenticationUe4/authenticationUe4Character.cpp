@@ -54,6 +54,7 @@ AauthenticationUe4Character::AauthenticationUe4Character()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
+
 void AauthenticationUe4Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
@@ -80,18 +81,28 @@ void AauthenticationUe4Character::SetupPlayerInputComponent(class UInputComponen
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AauthenticationUe4Character::OnResetVR);
 }
 
+void AauthenticationUe4Character::BeginPlay()//						BeginPlay
+{
+	Super::BeginPlay();
+	if (HasAuthority()==false)
+	{
+		ClientCharaterEndInit();
+	}	
+}
+
+
 void AauthenticationUe4Character::SetUserName(FString Name)
 {
 	UserName = Name;
 }
 
 
-bool AauthenticationUe4Character::ClientCharaterStartInit_Validate()//проверка на валидность функции чисто для репликации
+/*bool AauthenticationUe4Character::ClientCharaterStartInit_Validate()//проверка на валидность функции чисто для репликации
 {
 
 	// Optionally validate the request and return false if the function should not be run.
 	return true;
-}
+}*/
 void AauthenticationUe4Character::ClientCharaterStartInit_Implementation()//имплементация функции на Сервере получаем данные с сервера через UserSessionKey и сохраняем их
 {
 	ClientCharaterEndInit();

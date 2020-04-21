@@ -43,6 +43,8 @@ protected:
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
+	virtual void BeginPlay() override;
+
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);
 
@@ -81,10 +83,10 @@ public:
 	//My FUNCTION ------------------------------------------------------------------------------------------------------------>
 	UFUNCTION()
 		void SetUserName(FString Name);
-	UFUNCTION(reliable, client, WithValidation)
+	UFUNCTION(unreliable, NetMulticast/*, WithValidation*/)
 		void ClientCharaterStartInit();
 	virtual void ClientCharaterStartInit_Implementation();//имплементация функции на клиенте
-	virtual bool ClientCharaterStartInit_Validate();
+	//virtual bool ClientCharaterStartInit_Validate();
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintCosmetic)//BlueprintCosmetic вызывается только на клиенте
 		void ClientCharaterEndInit();
