@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{E1BB5E57-4DDB-E818-72C5-A4932715E365}",
+	"EngineAssociation": "{CCDE754F-4900-5D0A-5787-669183229AAD}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -20,5 +20,8 @@
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/e47be161e7a24e928560290abd5dcc4f"
 		}
+	],
+	"TargetPlatforms": [
+		"WindowsNoEditor"
 	]
 }
